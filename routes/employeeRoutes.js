@@ -16,14 +16,14 @@ function employeeRoutes(fastify, options, done) {
 
     schema: {
       tags: ["Employee"],
-      // body: {
-      //   type: "object",
-      //   properties: {
-      //     fullname: { type: "string" },
-      //     phone_number: { type: "string" },
-      //     password: { type: "string" },
-      //   },
-      // },
+       body: {
+        type: "object",
+         properties: {
+           fullname: { type: "string" },
+           phone_number: { type: "string" },
+           password: { type: "string" },
+         },
+       },
     },
     handler: registerEmployee,
   });
@@ -32,13 +32,13 @@ function employeeRoutes(fastify, options, done) {
   fastify.post("/login", {
     schema: {
       tags: ["Employee"],
-      // body: {
-      //   type: "object",
-      //   properties: {
-      //     phone_number: { type: "string" },
-      //     password: { type: "string" },
-      //   },
-      // },
+       body: {
+         type: "object",
+         properties: {
+           phone_number: { type: "string" },
+           password: { type: "string" },
+         },
+       },
     },
     handler: loginEmployee,
   });
